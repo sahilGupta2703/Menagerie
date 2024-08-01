@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "9b4dea0c-2277-4b75-82fe-a83d8647b9d7",
+		"name": "pet app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23549749"
+	},
+	"item": [
+		{
+			"name": "Add new pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"roxy\",\r\n  \"owner\": \"Sahil gupta\",\r\n  \"species\": \"labra\",\r\n  \"sex\": \"M\",\r\n  \"birth\": \"2018-05-10\",\r\n  \"death\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pets"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2023-07-31\",\r\n  \"type\": \"checkup\",\r\n  \"remark\": \"fit and fine.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pets/1/events"
+			},
+			"response": []
+		},
+		{
+			"name": "get all pets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/pets"
+			},
+			"response": []
+		},
+		{
+			"name": "update pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"roxy\",\r\n  \"owner\": \"gupta sahil\",\r\n  \"species\": \"german shephard\",\r\n  \"sex\": \"F\",\r\n  \"birth\": \"1993-05-10\",\r\n  \"death\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/pets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "filtered by species",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pets?species=labra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pets"
+					],
+					"query": [
+						{
+							"key": "species",
+							"value": "labra"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
